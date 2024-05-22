@@ -2,7 +2,6 @@ package main
 
 import "fmt"
 
-// реализация быстрой сортировки из грокаем алгоритмы
 func quickSort(arr []int) []int {
 	if len(arr) < 2 {
 		return arr
@@ -27,5 +26,7 @@ func quickSort(arr []int) []int {
 }
 
 func main() {
-	fmt.Println(quickSort([]int{6, 4, 7, 12, 6, 34, 8, 90}))
+	arr := []int{6, 4, 7, 12, 6, 34, 8, 90}
+	fmt.Printf("initial array: %v\n", arr)
+	fmt.Printf(" sorted array: %v\n", quickSort(arr))
 }

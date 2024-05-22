@@ -14,10 +14,8 @@ func reverseWords(str string) string {
 	for i := len(arr) - 2; i >= 0; i-- {
 		b.WriteString(" ")
 		b.WriteString(arr[i])
-
 	}
 
-	// return strings.Trim(b.String(), " ")
 	return b.String()
 }
 

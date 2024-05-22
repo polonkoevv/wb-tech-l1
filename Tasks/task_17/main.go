@@ -6,24 +6,24 @@ import (
 	"golang.org/x/exp/constraints"
 )
 
-func BinarySearch[T constraints.Ordered](list []T, item T) int {
-	var low, mid int
-	var guess T
-	high := len(list) - 1
+func BinarySearch[T constraints.Ordered](arr []T, target T) int {
+	left, right := 0, len(arr)-1
 
-	for low <= high {
-		mid = (low + high) / 2
-		guess = list[mid]
-		if guess == item {
+	for left <= right {
+		mid := left + (right-left)/2 // чтобы избежать переполнения
+
+		if arr[mid] == target {
 			return mid
 		}
-		if guess > item {
-			high = mid - 1
+
+		if arr[mid] < target {
+			left = mid + 1
 		} else {
-			low = mid + 1
+			right = mid - 1
 		}
 	}
-	return -1
+
+	return -1 // элемент не найден
 }
 
 func main() {

@@ -14,8 +14,7 @@ func main() {
 func OnlyGo(arr []int) {
 	time.Sleep(time.Second * 5)
 	for _, num := range arr {
-		// num := num
-
+		num := num
 		go func() {
 			fmt.Println(num * num)
 		}()

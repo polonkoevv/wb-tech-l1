@@ -7,13 +7,13 @@ import (
 
 func isUnique(str string) bool {
 	str = strings.ToLower(str)
-	m := make(map[rune]struct{})
+	m := make(map[rune]bool)
 
 	for _, r := range str {
 		if _, ok := m[r]; ok {
 			return false
 		}
-		m[r] = struct{}{}
+		m[r] = true
 	}
 
 	return true

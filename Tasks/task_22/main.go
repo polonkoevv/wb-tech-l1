@@ -3,26 +3,36 @@ package main
 import (
 	"fmt"
 	"math/big"
-	"os"
 )
 
 func main() {
-	a, ok := big.NewInt(0).SetString("5456513215645649854321321564878413215648649", 10)
-	if !ok {
-		fmt.Println("can't create first number")
-		os.Exit(1)
-	}
-	b, ok := big.NewInt(0).SetString("4587132156798711316877984521256498789978441", 10)
-	if !ok {
-		fmt.Println("can't create second number")
-		os.Exit(1)
-	}
+	// Инициализация больших чисел
+	a := new(big.Int)
+	b := new(big.Int)
 
-	fmt.Printf("1st number: %s\n2nd number: %s\n\n", a.String(), b.String())
+	// Установка значений (например, 2^21)
+	a.SetString("2097152", 10) // 2^21
+	b.SetString("4194304", 10) // 2^22
 
-	res := big.NewInt(0)
-	fmt.Println("multiplex:", res.Mul(a, b))
-	fmt.Println("division:", res.Div(a, b))
-	fmt.Println("sum:", res.Add(a, b))
-	fmt.Println("subtract:", res.Sub(a, b))
+	// Создание переменных для хранения результатов
+	sum := new(big.Int)
+	sub := new(big.Int)
+	mul := new(big.Int)
+	quotient := new(big.Int)
+	remainder := new(big.Int)
+
+	// Выполнение операций
+	sum.Add(a, b)
+	sub.Sub(a, b)
+	mul.Mul(a, b)
+	quotient.QuoRem(a, b, remainder)
+
+	// Вывод результатов
+	fmt.Printf("a = %s\n", a.String())
+	fmt.Printf("b = %s\n", b.String())
+	fmt.Printf("a + b = %s\n", sum.String())
+	fmt.Printf("a - b = %s\n", sub.String())
+	fmt.Printf("a * b = %s\n", mul.String())
+	fmt.Printf("a / b = %s\n", quotient.String())
+	fmt.Printf("a %% b = %s\n", remainder.String())
 }

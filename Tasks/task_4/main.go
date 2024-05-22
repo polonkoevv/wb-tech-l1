@@ -16,7 +16,6 @@ func main() {
 	var workers int
 	var delay time.Duration
 
-	// Считывание данных для кол-ва ворекров и времени периодичности
 	flag.IntVar(&workers, "w", 2, "Number of workers")
 	flag.DurationVar(&delay, "t", time.Second, "Delay time")
 	flag.Parse()

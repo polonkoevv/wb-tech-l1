@@ -18,7 +18,7 @@ func reverseString(str string) string {
 }
 
 func main() {
-	s := "日本語 test12 ႥႦႭ"
+	s := "語本 ႥႦႭ АБВГД"
 	fmt.Println(s)
 	fmt.Println(reverseString(s))
 }

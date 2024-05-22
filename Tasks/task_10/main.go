@@ -6,7 +6,7 @@ import (
 
 func main() {
 	temps := []float64{-25.4, -27.0, 13.0, 19.0, 15.5, 24.5, -21.0, 32.5}
-	fmt.Printf("temperatures: %v\n", temps)
+	fmt.Printf("initial values: %v\n", temps)
 
 	blocks := make(map[int][]float64)
 	for _, v := range temps {
@@ -14,5 +14,5 @@ func main() {
 		blocks[k] = append(blocks[k], v)
 	}
 
-	fmt.Printf("result: %v\n", blocks)
+	fmt.Printf("sorted result: %v\n", blocks)
 }
